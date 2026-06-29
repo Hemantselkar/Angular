@@ -1,0 +1,32 @@
+<main><h2>Tic Tac Toe </h2>
+<div class="container">
+    <div class="row">
+        <div class="col-lg-12 status">
+            @if (!winner) {
+                <h4>Current Player: {{currentPlayer}}</h4>
+            }@else if (winner==='draw') {
+                <h4>It's a Draw</h4>
+            }@else {
+                <h4>winner:{{winner}}</h4>
+            }
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="d-flex flex-wrap justify-content-center mx-auto" style="width: 290px;">
+                @for (cell of board; let i = $index; track i) {
+                    <button
+                    class="btn border border-2 rounded-3 m-1 d-flex justify-content-center align-items-center fw-bold box"
+                    (click)="makeMove(i)">
+                    {{ cell }}
+                    </button>              
+                }
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-12 d-flex justify-content-center py-4">
+             <button type="button" class="btn btn-outline-warning  " (click)="resetGame()">Reset Game</button>
+        </div>
+    </div>
+</div>
