@@ -1,8 +1,18 @@
 
 
-<main class="main">
-<app-tic-tac-toe></app-tic-tac-toe>
-</main>
+
+<nav style=" background: linear-gradient(to bottom,#667eea,#764ba2); height: 50px;">
+    <div style="display: flex; justify-content: space-evenly; text-decoration: none; padding-top: 15px;">
+        <a routerLink="/" style="color: black; text-decoration: none;">Home</a>
+        <a routerLink="/about" style="color: black; text-decoration: none;">About</a>
+        <a routerLink="/forms" style="color: black; text-decoration: none;">Forms</a>
+        <a routerLink="api-demo/get-api" style="color: black; text-decoration: none;">Get-Api</a>
+        <a routerLink="api-demo/post-api" style="color: black; text-decoration: none;">post-Api</a>
 
 
-<router-outlet />
+    </div>
+
+</nav>
+<router-outlet></router-outlet >
+
+

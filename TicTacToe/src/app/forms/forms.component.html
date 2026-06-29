@@ -1,0 +1,68 @@
+<div class="container">
+  <form class="row g-3 "[formGroup]="studentForm">
+  <div class="col-md-6">
+    <label for="inputEmail4" class="form-label">Email</label>
+    <input type="email" class="form-control" formControlName="Email" id="inputEmail4">
+    <div class="text-danger">
+      @if (studentForm.controls['Email'].errors?.['email']) {
+
+        <span>Emial is not correct</span>
+      }@else if (studentForm.controls['Email'].errors?.['required']) {
+        <span>Email requried</span>
+      }
+    </div>
+  </div>
+  <div class="col-md-6">
+    <label for="inputPassword4" class="form-label"  >Password</label>
+    <input type="password" class="form-control" id="inputPassword4" formControlName="Password" >
+    <div class="text-danger">
+      @if (studentForm.controls['Password'].errors?.['required']) {
+
+        <span>Emial is not correct</span>
+      }
+    </div>
+  </div>
+  <div class="col-12">
+    <label for="inputAddress" class="form-label">Address</label>
+    <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St" formControlName="Address" >
+  </div>
+  <div class="col-12">
+    <label for="inputAddress2" class="form-label">office</label>
+    <input type="text" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor" formControlName="office" >
+  </div>
+  <div class="col-md-6">
+    <label for="inputCity" class="form-label">City</label>
+    <input type="text" class="form-control" id="inputCity" formControlName="City" >
+  </div>
+  <div class="col-md-4">
+    <label for="inputState" class="form-label">State</label>
+    <select id="inputState" class="form-select" formControlName="state" >
+      <option selected>Choose...</option>
+      <option>Maharastra</option>
+      <option>GOA</option>
+      <option>Punjab</option>
+    
+    </select>
+  </div>
+  <div class="col-md-2">
+    <label for="inputZip" class="form-label">Zip</label>
+    <input type="text" class="form-control" id="inputZip" formControlName="ZipCode" >
+  </div>
+  <div class="col-12">
+    <div class="form-check">
+      <input class="form-check-input" type="checkbox" id="gridCheck" formControlName="isActiveTerms" >
+      <label class="form-check-label" for="gridCheck">
+        Check me out
+      </label>
+    </div>
+  </div>
+  <div class="col-12">
+    <button type="submit" class="btn btn-primary"[disabled]="studentForm.invalid" (click)="OnSave()">Sign in</button>
+  </div>
+</form>
+
+</div>
+
+<div class="container">
+  <p>{{FormValue | json}}</p>
+</div>

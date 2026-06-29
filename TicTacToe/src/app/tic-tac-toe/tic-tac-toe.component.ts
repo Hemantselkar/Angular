@@ -25,7 +25,7 @@ export class TicTacToeComponent {
     }else if(this.board.every((cell)=>cell !==null)){
       this.winner='draw';
     }else{
-      this.currentPlayer=this.currentPlayer==='X'?'O':'X';
+      this.currentPlayer=this.currentPlayer === 'X'?'O':'X';
     }
   }
 
@@ -34,21 +34,21 @@ export class TicTacToeComponent {
 
     // return wins.some((pattern)=>pattern.every((i)=>this.board[i]===this.currentPlayer));
     for (let pattern of wins) {
-    let isWinner = true;
+      let isWinner = true;
 
-    for (let i of pattern) {
-      if (this.board[i] !== this.currentPlayer) {
-        isWinner = false;
-        break;
+      for (let i of pattern) {
+        if (this.board[i] !== this.currentPlayer) {
+          isWinner = false;
+          break;
+        }
+      }
+
+      if (isWinner) {
+        return true;
       }
     }
 
-    if (isWinner) {
-      return true;
-    }
-}
-
-return false;
+    return false;
   }
 
   resetGame(){
