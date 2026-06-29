@@ -32,7 +32,23 @@ export class TicTacToeComponent {
   checkWinner():boolean{
     const wins=[ [0,1,2],[3,4,5],[6,7,8],[0,3,6],[1,4,7],[2,5,8],[0,4,8],[2,4,6]];
 
-    return wins.some((pattern)=>pattern.every((i)=>this.board[i]===this.currentPlayer));
+    // return wins.some((pattern)=>pattern.every((i)=>this.board[i]===this.currentPlayer));
+    for (let pattern of wins) {
+    let isWinner = true;
+
+    for (let i of pattern) {
+      if (this.board[i] !== this.currentPlayer) {
+        isWinner = false;
+        break;
+      }
+    }
+
+    if (isWinner) {
+      return true;
+    }
+}
+
+return false;
   }
 
   resetGame(){
