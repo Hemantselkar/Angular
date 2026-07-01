@@ -13,7 +13,7 @@ import { BLoginComponent } from '../b-login/b-login.component';
   styleUrl: './login.component.css'
 })
 export class LoginComponent {
-  
+    
    login:{ UserName: string; Password: string } = { UserName: '', Password: '' };
    islogin:boolean=false;
    router = inject(Router);

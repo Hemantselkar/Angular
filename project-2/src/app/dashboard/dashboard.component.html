@@ -1,0 +1,73 @@
+<app-header></app-header>
+
+@if (isClicked) {
+    <router-outlet></router-outlet>
+
+   
+}
+@else {
+     <div class="container">
+    <div class="row">
+        <div class="col-lg-10">
+            <h2>Categories Mangement</h2>
+        </div>
+        <div class="col-lg-2">
+            <button type="button" class="btn btn-success">Create Category</button>
+        </div>
+    </div>
+    <div class="row my-4">
+        <div class="col-lg-12">
+            <form class="form-floating d-flex gap-3">
+                <div>
+                    <input type="text" class="form-control" id="floatingInputValue" placeholder="Search for by name type or status" >
+                    
+                </div>
+                 <div>
+                    <input type="text" class="form-control" id="floatingInputValue" placeholder="All types" >
+                    
+                </div>
+                 <div>
+                    <input type="text" class="form-control" id="floatingInputValue" placeholder="All status" >
+                </div>
+                <div>
+                    <input type="text" class="form-control" id="floatingInputValue" placeholder="Recent" >
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-lg-12">
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th scope="col">Name</th>
+                        <th scope="col">Type</th>
+                        <th scope="col">Courses</th>
+                        <th scope="col">Quizzes</th>
+                        <th scope="col">Status</th>
+                        <th scope="col">Created</th>
+                        <th scope="col">Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let item of exams; let i = index">
+                        
+                        <td>{{ item.name }}</td>
+                        <td><button type="button" class="btn btn-outline-danger rounded-pill">{{ item.type }}</button></td>
+                        <td>{{ item.course }}</td>
+                        <td>{{ item.quizzes }}</td>
+                        <td><button type="button" class="btn btn-success rounded-pill">{{ item.status }}</button></td>
+                        <td>{{ item.created }}</td>
+                        <td class="d-flex gap-2">
+                            <button type="button" class="btn btn-primary" (click)="onClick()">Profile</button>
+                            <button type="button" class="btn btn-danger" (click)="onDelete()">Delete</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+    </div>
+    </div>
+}
