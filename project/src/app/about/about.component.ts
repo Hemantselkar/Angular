@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { BLoginComponent } from "../b-login/b-login.component";
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-about',
@@ -9,5 +10,6 @@ import { BLoginComponent } from "../b-login/b-login.component";
   styleUrl: './about.component.css'
 })
 export class AboutComponent {
-
+ router = inject(Router);
+ 
 }
