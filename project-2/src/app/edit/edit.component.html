@@ -1,5 +1,5 @@
-
-<div class="container bg-light shadow p-3 mb-5 bg-body rounded" style="margin-top: 20px; border-radius: 10px; width: 50%;">
+@if (exam) {
+<div  class="container bg-light shadow p-3 mb-5 bg-body rounded" style="margin-top: 20px; border-radius: 10px; width: 50%;">
     <div class="row">
         <div class="col-lg-12 ">
          <h4>{{ exam.name }}</h4>
@@ -9,41 +9,39 @@
     <div>
         <form class="row g-3">
             <div class="col-md-6">
-                <label  class="form-label">Plan Name</label>
-                <input type="text" class="form-control" id="inputEmail4" value="{{ exam.name }}">
+                <label class="form-label">Plan Name</label>
+                <input type="text" class="form-control" id="inputEmail4" name="name" [(ngModel)]="exam.name">
             </div>
             <div class="col-md-6">
                 <label for="inputPassword4" class="form-label">Courses</label>
-                <input type="number" class="form-control" id="inputPassword4" value="{{ exam.course }}">
+                <input type="number" class="form-control" id="inputPassword4" name="course" [(ngModel)]="exam.course">
             </div>
             <div class="col-6">
                 <label for="inputAddress" class="form-label">Quizzes</label>
-                <input type="text" class="form-control" id="inputAddress" value="{{ exam.quizzes }}">
+                <input type="text" class="form-control" id="inputAddress" name="quizzes" [(ngModel)]="exam.quizzes">
             </div>
-             <div class="col-6">
+            <div class="col-6">
                 <label for="inputAddress" class="form-label">Created</label>
-                <input type="date" class="form-control" id="inputAddress" value="{{ exam.created }}">
+                <input type="date" class="form-control" id="inputAddress" name="created" [(ngModel)]="exam.created">
             </div>
             <div class="col-md-6">
                 <label for="inputCity" class="form-label">Type</label>
-                <input type="text" class="form-control" id="inputCity" value="{{ exam.type }}">
+                <input type="text" class="form-control" id="inputCity" name="type" [(ngModel)]="exam.type">
             </div>
-           
-            <div>
+            <div class="col-md-6">
                 <label for="inputState" class="form-label">Status</label>
-                <select id="inputState" class="form-select">
-                    <option selected>{{ exam.status }}</option>
-                    <option>InActive</option>
+                <select id="inputState" class="form-select" name="status" [(ngModel)]="exam.status">
+                    <option value="Active">Active</option>
+                    <option value="InActive">InActive</option>
                 </select>
             </div>
-
-            
-              <div>
-                <button type="button" class="btn btn-success">Save</button>
+            <div class="col-12">
+                <button type="button" class="btn btn-success" (click)="saveChange(exam)">Save</button>
             </div>
-            
         </form>
-        
     </div>
 </div>
-<p>edit works!</p>
+}@else {
+
+    <router-outlet></router-outlet>
+}

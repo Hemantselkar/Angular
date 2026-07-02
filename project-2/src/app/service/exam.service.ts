@@ -30,4 +30,10 @@ export class ExamService {
         this.exams.splice(index, 1);
       }
     }
+    updateExam(id: number, updatedExam: any) {
+      const index = this.exams.findIndex(exam => exam.id === id); 
+      if (index !== -1) {
+        this.exams[index] = { ...this.exams[index], ...updatedExam };
+      }
+    }
 }

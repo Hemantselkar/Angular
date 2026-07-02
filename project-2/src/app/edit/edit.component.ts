@@ -1,12 +1,14 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { ExamService } from '../service/exam.service';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, RouterOutlet } from '@angular/router';
 import { OnInit } from '@angular/core';
+import { FormsModule } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-edit',
   standalone: true,
-  imports: [],
+  imports: [FormsModule, RouterOutlet],
   templateUrl: './edit.component.html',
   styleUrl: './edit.component.css'
 })
@@ -24,4 +26,11 @@ export class EditComponent implements OnInit {
 
   }
   
+  router = inject(Router);
+  saveChange(exam: any[]) {
+    console.log('Saving changes for exam:', exam);
+
+    this.examService.updateExam(this.exam.id, exam);
+    this.router.navigate(['/dashboard']);
+  }
 }
