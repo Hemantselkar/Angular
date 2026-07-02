@@ -1,6 +1,7 @@
 import { Routes } from '@angular/router';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { ProfileComponent } from './profile/profile.component';
+import { EditComponent } from './edit/edit.component';
 
 export const routes: Routes = [
     {
@@ -9,9 +10,9 @@ export const routes: Routes = [
     {
         path:'dashboard',component:DashboardComponent,children:[
             {
-                path:'profile',component:ProfileComponent,children:[
+                path:'profile/:id',component:ProfileComponent,children:[
                     {
-                        path:'edit',component:ProfileComponent
+                        path:'edit',component:EditComponent
                     }
                 ]
             }

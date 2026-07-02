@@ -51,7 +51,9 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr *ngFor="let item of exams; let i = index">
+                    @for (item of exams; track item.id;let i = $index) {
+                    
+                    <tr>
                         
                         <td>{{ item.name }}</td>
                         <td><button type="button" class="btn btn-outline-danger rounded-pill">{{ item.type }}</button></td>
@@ -60,10 +62,11 @@
                         <td><button type="button" class="btn btn-success rounded-pill">{{ item.status }}</button></td>
                         <td>{{ item.created }}</td>
                         <td class="d-flex gap-2">
-                            <button type="button" class="btn btn-primary" (click)="onClick()">Profile</button>
-                            <button type="button" class="btn btn-danger" (click)="onDelete()">Delete</button>
+                            <button type="button" class="btn btn-primary" (click)="onClick(item.id)">Profile</button>
+                            <button type="button" class="btn btn-danger" (click)="onDelete(item.id)">Delete</button>
                         </td>
                     </tr>
+                    }
                 </tbody>
             </table>
         </div>
