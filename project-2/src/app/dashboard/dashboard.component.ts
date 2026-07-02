@@ -37,6 +37,11 @@ export class DashboardComponent implements OnInit {
     }
 
   }
+  move=inject(Router);
+  onAdd() {
+    console.log("Bhai Add button clicked!");
+    this.move.navigate(['dashboard/addcategory']);
+  }
 
   onDelete(id:number){
     this.examService.deleteExamById(id);

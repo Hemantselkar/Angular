@@ -1,0 +1,35 @@
+
+<div class="container">
+    <form class="row g-3" [formGroup]="exams">
+        <div class="col-md-6">
+            <label for="inputEmail4" class="form-label">Name</label>
+            <input type="text" class="form-control" id="inputEmail4" formControlName="name">
+        </div>
+        <div class="col-md-6">
+            <label for="inputPassword4" class="form-label">Type</label>
+            <input type="text" class="form-control" id="inputPassword4" formControlName="type">
+        </div>
+        <div class="col-6">
+            <label for="inputAddress" class="form-label">Courses</label>
+            <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St" formControlName="courses">
+        </div>
+        <div class="col-6">
+            <label for="inputAddress" class="form-label">Quizzes</label>
+            <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St" formControlName="quizzes">
+        </div>
+        <div class="col-md-6">
+            <label for="inputCity" class="form-label">Created</label>
+            <input type="text" class="form-control" id="inputCity" formControlName="created">
+        </div>
+        <div class="col-md-4">
+            <label for="inputState" class="form-label">Status</label>
+            <select id="inputState" class="form-select">
+                <option selected>Choose...</option>
+                <option>...</option>
+            </select>
+        </div>
+        <div class="col-12">
+            <button type="submit" class="btn btn-primary"> ADD </button>
+        </div>
+    </form>
+</div>

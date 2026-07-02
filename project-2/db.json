@@ -1,0 +1,12 @@
+{
+  "data": [
+    {
+      "Name": "NDA",
+      "Type": "Exam",
+      "Courses": "45",
+      "Quizzes": "25",
+      "Created": "21-11-2025",
+      "id": 7
+    }
+  ]
+}
