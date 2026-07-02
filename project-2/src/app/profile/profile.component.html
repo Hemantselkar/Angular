@@ -17,31 +17,31 @@
     </div>
     <hr>
     <div>
-        <form class="row g-3">
+        <form class="row g-3" >
             <div class="col-md-6">
                 <label  class="form-label">Type</label>
-                <input type="text" class="form-control" id="inputEmail4" placeholder="" value="{{ exam.type }}">
+                <input type="text" class="form-control" id="inputEmail4" placeholder="" value="{{ exam.type }}" readonly> 
             </div>
             <div class="col-md-6">
                 <label for="inputPassword4" class="form-label">Courses</label>
-                <input type="number" class="form-control" id="inputPassword4"value="{{ exam.course }}">
+                <input type="number" class="form-control" id="inputPassword4"value="{{ exam.course }}" readonly>
             </div>
             <div class="col-6">
                 <label for="inputAddress" class="form-label">Quizzes</label>
-                <input type="text" class="form-control" id="inputAddress" value="{{ exam.quizzes }}">
+                <input type="text" class="form-control" id="inputAddress" value="{{ exam.quizzes }}" readonly>
             </div>
             <div class="col-6">
                 <label for="inputAddress" class="form-label">Created</label>
-                <input type="text" class="form-control" id="inputDate"value="{{ exam.created }}">
+                <input type="text" class="form-control" id="inputDate"value="{{ exam.created }}" readonly>
             </div>
 
            
             <div>
                 <label for="inputState" class="form-label">Status</label>
-                <select id="inputState" class="form-select">
-                <option selected>{{ exam.status }}</option>
-                <option>Active</option>
-                <option>Inactive</option>
+                <select id="inputState" class="form-select" >
+                <option selected readonly>{{ exam.status }}</option>
+                <!-- <option>Active</option>
+                <option>Inactive</option> -->
 
                 </select>
             </div>
