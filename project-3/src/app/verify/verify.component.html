@@ -1,5 +1,4 @@
 
-
 <div class="main container-fluid bg-light" style="height: 100vh; ">
     <div class="row">
         <div class="col-md-6 ">
@@ -8,15 +7,16 @@
                     <div>
                         <img src="https://t3.ftcdn.net/jpg/04/98/55/32/360_F_498553257_h9QB8xmF1L9L8NWvVD9VhkJKqxj1BiO9.jpg" alt="" srcset="" style="height: 90px; padding-bottom: 10px; margin-bottom: 10px;">
                         <p routerLink="/login" style="cursor: pointer;">Back to login </p>
-                        <h2 style="padding-bottom: 10px;">Forgot Your Password</h2>
-                        <p style="padding-bottom: 10px;" >Don't worry, happends to all of us. Enter your name below recover your password </p>
+                        <h2 style="padding-bottom: 10px;">Verify Code</h2>
+                        <p style="padding-bottom: 10px;" >An authentication code has been send to your email</p>
                         <div class="row mb-3 my-4">
-                            <label for="inputEmail3" class="col-sm-2 col-form-label fs-4">Email:</label>
+                            <label for="inputEmail3" class="col-sm-2 col-form-label w-100">Enter Code :</label>
                             <div class="col-sm-10">
-                                <input type="email" class="form-control my-2" id="inputEmail3">
+                                <input type="text" class="form-control" id="inputEmail3">
                             </div>
                         </div>
-                        <button type="submit" class="btn btn-dark w-100 mx-2 my-4" (click)="onSubmit()">Submit</button>
+                        <p>Didn't receive a code? <b>Resend</b></p>
+                        <button type="submit" class="btn btn-dark w-100 mx-2 my-4" (click)="onSubmit()">Verify</button>
                     </div>
                 </form>
                 <hr>
@@ -39,5 +39,3 @@
 </div> 
 
 <router-outlet></router-outlet>
-
-

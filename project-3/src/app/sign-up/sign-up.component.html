@@ -13,15 +13,23 @@
       <div class="from-box" style="margin-left: 15rem">
         <h2>Sign UP</h2>
         <p>let's get you all st up so you can access your personal account</p>
-        <form class="row g-3">
+        <form [formGroup]="users" (ngSubmit)="onSubmit()" class="row g-3">
           <div class="col-md-6">
-            <label for="inputEmail4" class="form-label">First Name </label>
+            <label for="inputEmail4" class="form-label" name="firstName"
+              >First Name
+            </label>
             <input
               type="text"
               class="form-control"
               id="inputEmail4"
               placeholder="First Name"
+              formControlName="firstName"
             />
+            @if (
+              users.get("firstName")?.invalid && users.get("firstName")?.touched
+            ) {
+              <span class="text-danger">First Name is required</span>
+            }
           </div>
           <div class="col-md-6">
             <label for="inputPassword4" class="form-label">Last Name</label>
@@ -29,8 +37,9 @@
               type="text"
               class="form-control"
               id="inputPassword4"
+              formControlName="lastName"
               placeholder="Last Name"
-            />
+            />.
           </div>
           <div class="col-md-6">
             <label for="inputEmail4" class="form-label">Email</label>
@@ -39,38 +48,111 @@
               class="form-control"
               id="inputEmail4"
               placeholder="xzy@gmail.com"
+              formControlName="email"
             />
+            @if (
+              users.get("email")?.errors?.["required"] &&
+              users.get("email")?.touched
+            ) {
+              <span class="text-danger">Email is required</span>
+            }
+
+            @if (
+              users.get("email")?.errors?.["email"] &&
+              users.get("email")?.touched
+            ) {
+              <span class="text-danger">Enter a valid email</span>
+            }
           </div>
           <div class="col-md-6">
-            <label for="inputPassword4" class="form-label">Phone Number</label>
+            <label for="inputPassword4" class="form-label" name="phone"
+              >Phone Number</label
+            >
             <input
               type="number"
               class="form-control"
               id="inputPassword4"
               placeholder="Phone number"
+              formControlName="phoneNo"
             />
+            @if (
+              users.get("phoneNo")?.errors?.["required"] &&
+              users.get("phoneNo")?.touched
+            ) {
+              <span class="text-danger">Phone Number is required</span>
+            }
+
+            @if (
+              users.get("phoneNo")?.errors?.["pattern"] &&
+              users.get("phoneNo")?.touched
+            ) {
+              <span class="text-danger"
+                >Enter a valid 10-digit phone number</span
+              >
+            }
           </div>
           <div class="col-12">
             <label for="inputAddress" class="form-label">Password</label>
             <input type="password" class="form-control" id="inputAddress" />
           </div>
+
+          @if (
+            users.get("password")?.errors?.["required"] &&
+            users.get("password")?.touched
+          ) {
+            <span class="text-danger">Password is required</span>
+          }
+
+          @if (
+            users.get("password")?.errors?.["minlength"] &&
+            users.get("password")?.touched
+          ) {
+            <span class="text-danger"
+              >Password must be at least 6 characters</span
+            >
+          }
+
           <div class="col-12">
             <label for="inputAddress2" class="form-label"
               >Confirm Password</label
             >
-            <input type="password" class="form-control" id="inputAddress2" />
+            <input
+              type="password"
+              class="form-control"
+              id="inputAddress2"
+              formControlName="confirmPassword"
+            />
           </div>
+          @if (
+            users.get("confirmPassword")?.invalid &&
+            users.get("confirmPassword")?.touched
+          ) {
+            <span class="text-danger">Confirm Password is required</span>
+          }
 
           <div class="col-12">
             <div class="form-check">
-              <input class="form-check-input" type="checkbox" id="gridCheck" />
+              <input
+                class="form-check-input"
+                type="checkbox"
+                id="gridCheck"
+                formControlName="isChecked"
+              />
               <label class="form-check-label" for="gridCheck">
                 I agree to all terms & Privacy Policies
               </label>
+              @if (
+                users.get("isChecked")?.invalid &&
+                users.get("isChecked")?.touched
+              ) {
+                <span class="text-danger">
+                  Please accept Terms & Conditions
+                </span>
+              }
             </div>
           </div>
           <div class="col-12">
-            <button type="submit" class="btn btn-primary w-100">
+            <button type="submit" class="btn btn-dark w-100">
               Create Account
             </button>
           </div>
@@ -81,7 +163,7 @@
           </p>
         </form>
         <hr />
-        <p class="text">or sign up with</p>
+        
         <div class="social">
           <a href="#"
             ><i
