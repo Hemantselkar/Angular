@@ -1,0 +1,16 @@
+.main{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+.image img{
+    margin-left: 6rem;
+    border-radius: 25px;
+    width: 28rem;
+    height: 35rem;
+}
+ form{
+    height: 28rem;
+    width: 25rem;
+
+}
