@@ -1,0 +1,30 @@
+.main{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+.image img{
+    margin-left: 6rem;
+    border-radius: 25px;
+    width: 28rem;
+    height: 35rem;
+}
+ form{
+    height: 28rem;
+    width: 25rem;
+
+}
+
+.social{
+    
+    display: flex;
+    justify-content: space-evenly;
+    gap: 5px;
+    font-size: 30px;
+}
+.social a{
+    text-align: center;
+    width: 140px;
+    border-radius: 10px;
+    border: 2px solid rgb(119, 216, 255);
+}
