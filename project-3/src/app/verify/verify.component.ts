@@ -1,5 +1,5 @@
 import { Component, inject } from '@angular/core';
-import { Router, RouterOutlet } from "../../../node_modules/@angular/router/index";
+import { Router,RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-verify',

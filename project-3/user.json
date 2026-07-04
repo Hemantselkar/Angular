@@ -1,0 +1,14 @@
+{
+  "users": [
+    {
+      "firstName": "om",
+      "lastName": "das",
+      "email": "zxc@gmail.com",
+      "phoneNo": 1010101010,
+      "password": "Omdas@123",
+      "confirmPassword": "Omdas@123",
+      "isChecked": true,
+      "id": 1
+    }
+  ]
+}
