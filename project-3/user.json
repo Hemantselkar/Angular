@@ -9,6 +9,16 @@
       "confirmPassword": "Omdas@123",
       "isChecked": true,
       "id": 1
+    },
+    {
+      "firstName": "Heamnt",
+      "lastName": "Selkar",
+      "email": "abc@gmail.com",
+      "phoneNo": 4040404040,
+      "password": "Bhai@420",
+      "confirmPassword": "Bhai@420",
+      "isChecked": true,
+      "id": 2
     }
   ]
 }
