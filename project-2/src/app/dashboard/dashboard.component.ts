@@ -27,7 +27,7 @@ export class DashboardComponent implements OnInit {
   isClicked: boolean = false;
 
   router = inject(Router);
-  move = inject(Router);
+  
 
   constructor(private examService: ExamService, private route: ActivatedRoute) { }
 
@@ -58,7 +58,9 @@ export class DashboardComponent implements OnInit {
   }
 
   onAdd() {
-    this.move.navigate(['dashboard/addcategory']);
+    this.isClicked=true;
+    console.log("called")
+    this.router.navigate(['addcategory']);
   }
 
   onDelete(id: number) {
