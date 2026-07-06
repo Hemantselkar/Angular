@@ -1,76 +1,88 @@
 <app-header></app-header>
 
 @if (isClicked) {
-    <router-outlet></router-outlet>
-
-   
-}
-@else {
-     <div class="container">
+  <router-outlet></router-outlet>
+} @else {
+  <div class="container">
     <div class="row">
-        <div class="col-lg-10">
-            <h2>Categories Mangement</h2>
-        </div>
-        <div class="col-lg-2">
-            <button type="button" class="btn btn-success" (click)="onAdd()">Create Category</button>
-        </div>
+      <div class="col-lg-10">
+        <h2>Categories Management</h2>
+      </div>
+      <div class="col-lg-2">
+        <button type="button" class="btn btn-success" (click)="onAdd()">Create Category</button>
+      </div>
     </div>
+
     <div class="row my-4">
-        <div class="col-lg-12">
-            <form class="form-floating d-flex gap-3">
-                <div>
-                    <input type="text" class="form-control" id="floatingInputValue" placeholder="Search for by name type or status" >
-                    
-                </div>
-                 <div>
-                    <input type="text" class="form-control" id="floatingInputValue" placeholder="All types" >
-                    
-                </div>
-                 <div>
-                    <input type="text" class="form-control" id="floatingInputValue" placeholder="All status" >
-                </div>
-                <div>
-                    <input type="text" class="form-control" id="floatingInputValue" placeholder="Recent" >
-                </div>
-            </form>
-        </div>
+      <div class="col-lg-12">
+        <form class="d-flex gap-3">
+
+
+          <div>
+            <input type="text" class="form-control" placeholder="Search by name" [(ngModel)]="searchTerm" name="searchTerm" (input)="applyFilters()">
+          </div>
+
+
+          <div>
+            <select class="form-select" [(ngModel)]="typeSearch" name="typeSearch"(ngModelChange)="applyFilters()">
+              @for (t of types; track t) {
+                <option [value]="t">{{ t === 'all' ? 'All Types' : t }}</option>
+              }
+            </select>
+          </div>
+
+          <div>
+            <select class="form-select" [(ngModel)]="statusSearch" name="statusSearch" (ngModelChange)="applyFilters()">
+              @for (s of statuses; track s) {
+                <option [value]="s">{{ s === 'all' ? 'All Status' : s }}</option>
+              }
+            </select>
+          </div>
+
+          <div>
+            <button type="button" class="btn btn-warning" (click)="resetFilter()">Reset</button>
+          </div>
+        </form>
+      </div>
     </div>
 
     <div class="row">
-        <div class="col-lg-12">
-            <table class="table table-striped">
-                <thead>
-                    <tr>
-                        <th scope="col">Name</th>
-                        <th scope="col">Type</th>
-                        <th scope="col">Courses</th>
-                        <th scope="col">Quizzes</th>
-                        <th scope="col">Status</th>
-                        <th scope="col">Created</th>
-                        <th scope="col">Action</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    @for (item of exams; track item.id;let i = $index) {
-                    
-                    <tr>
-                        
-                        <td>{{ item.name }}</td>
-                        <td><button type="button" class="btn btn-outline-danger rounded-pill">{{ item.type }}</button></td>
-                        <td>{{ item.course }}</td>
-                        <td>{{ item.quizzes }}</td>
-                        <td><button type="button" class="btn btn-success rounded-pill">{{ item.status }}</button></td>
-                        <td>{{ item.created }}</td>
-                        <td class="d-flex gap-2">
-                            <button type="button" class="btn btn-primary" (click)="onClick(item.id)">Profile</button>
-                            <button type="button" class="btn btn-danger" (click)="onDelete(item.id)">Delete</button>
-                        </td>
-                    </tr>
-                    }
-                </tbody>
-            </table>
-        </div>
-
+      <div class="col-lg-12">
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Type</th>
+              <th>Courses</th>
+              <th>Quizzes</th>
+              <th>Status</th>
+              <th>Created</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            @for (item of exams; track item.id; let i = $index) {
+              <tr>
+                <td>{{ item.name }}</td>
+                <td><button type="button" class="btn btn-outline-danger rounded-pill">{{ item.type }}</button>
+                </td>
+                <td>{{ item.course }}</td>
+                <td>{{ item.quizzes }}</td>
+                <td><button type="button" class="btn btn-success rounded-pill">{{ item.status }}</button></td>
+                <td>{{ item.created }}</td>
+                <td class="d-flex gap-2">
+                  <button type="button" class="btn btn-primary" (click)="onClick(item.id)">Profile</button>
+                  <button type="button" class="btn btn-danger" (click)="onDelete(item.id)">Delete</button>
+                </td>
+              </tr>
+            } @empty {
+              <tr>
+                  <td class="text-center ">No exams found </td>
+              </tr>
+            }
+          </tbody>
+        </table>
+      </div>
     </div>
-    </div>
+  </div>
 }

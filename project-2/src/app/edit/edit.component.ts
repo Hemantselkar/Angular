@@ -1,5 +1,5 @@
 import { Component, inject } from '@angular/core';
-import { ExamService } from '../service/exam.service';
+import { Exam, ExamService } from '../service/exam.service';
 import { ActivatedRoute, RouterOutlet } from '@angular/router';
 import { OnInit } from '@angular/core';
 import { FormsModule } from '@angular/forms';
@@ -13,8 +13,8 @@ import { Router } from '@angular/router';
   styleUrl: './edit.component.css'
 })
 export class EditComponent implements OnInit {
-  exams: any[] = [];
-  exam: any;
+  exams: Exam[] = [];
+  exam: Exam | undefined;
   constructor(private examService: ExamService , private route: ActivatedRoute) { 
     
   }
@@ -30,7 +30,12 @@ export class EditComponent implements OnInit {
   saveChange(exam: any[]) {
     console.log('Saving changes for exam:', exam);
 
-    this.examService.updateExam(this.exam.id, exam);
-    this.router.navigate(['/dashboard']);
+    if (this.exam) {
+      this.examService.updateExam(this.exam.id, exam);
+      this.router.navigate(['/dashboard']);
+    }
+  }
+  cancle(){
+    this.router.navigate(['/dashboard'])
   }
 }
