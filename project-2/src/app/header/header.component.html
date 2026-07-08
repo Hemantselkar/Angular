@@ -1,13 +1,56 @@
-
+@if (isLogin) {
 <div class="container-fluid">
     <nav class="navbar bg-light shadow p-3 mb-5 bg-body rounded">
         <div class="container-fluid">
             <a class="navbar-brand">Categories</a>
             <form class="d-flex" role="search">
-            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"/>
-            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTiMEvknYLtAuDe9Kf-C1ilopAwszPA6R3QEDIwscwFUQ&s=10" alt="" srcset=""style="width: 40px; height: 40px; border-radius: 50%;"/>
-            <!-- <button class="btn btn-outline-success" type="submit">Search</button> -->
+                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"/>
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTiMEvknYLtAuDe9Kf-C1ilopAwszPA6R3QEDIwscwFUQ&s=10" alt="" srcset=""style="width: 40px; height: 40px; border-radius: 50%;"/>
+                <!-- <button class="btn btn-outline-success" type="submit">Search</button> -->
             </form>
         </div>
     </nav>
 </div>
+}
+
+
+@else {
+<div class="container-fluid ">
+
+    <nav class="navbar navbar-expand-lg bg-light shadow p-3 mb-5 bg-body rounded fixed-top">
+  <div class="container-fluid">
+    <!-- <a class="navbar-brand" href="#">Navbar</a> -->
+     <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQgXUWMxeFccmpn1utAIG_8rCy-fdseL_i1cbK97PQcaA&s" alt="" srcset="" style="height: 60px; width:60px; border-radius: 25px;">
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse gap-5" id="navbarSupportedContent">
+      <ul class="navbar-nav ms-auto fs-5 fw-medium gap-5">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="#">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Explore</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Blogs</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">About</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Contact Us</a>
+        </li>
+      </ul>
+      <div>
+        <button type="button" class="btn btn-outline-dark"> List Your Property</button>
+      </div>
+      <div>
+        <button type="button" class="btn btn-dark rounded-pill">Login/SignUp</button>
+      </div>
+    </div>
+  </div>
+</nav>
+
+</div>
+}
