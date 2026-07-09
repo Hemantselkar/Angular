@@ -5,7 +5,7 @@
 }
 
 .create-course-page{
-    padding: 28px 32px 48px ;
+    padding: 20px 32px 0  ;
     background-color: #ffffff;
     
 }
@@ -28,6 +28,10 @@
     gap: 10px;
 }
 
+.left{
+    padding-right: 15px;
+    border-right: 2px dashed black;
+}
 .block{
     margin-top: 30px;
 }
@@ -50,7 +54,7 @@
 .discription-tool{
     display: flex;
     align-items: center;
-    gap: 19px;
+    gap: 16px;
     padding: 6px 8px;
     flex-wrap: wrap;
     border: none;
@@ -80,7 +84,7 @@
 }
 .text-area{
     width: 100%;
-    min-height: 100px;
+    min-height: 160px;
     border: none;
     outline: none;
     resize: vertical;
@@ -105,6 +109,8 @@
     select{
         padding: 5px;
         width: 100%;
+        border: 2px solid gray;
+        border-radius: 8px;
     }
 }
 
@@ -113,4 +119,37 @@
     display: flex;
     justify-content: space-between;
     
+}
+.right{
+    padding-left:20px ;
+
+}
+
+.auther-block{
+    display: flex;
+    align-items: center;
+    border:2px solid gray;
+    border-radius: 8px;
+    padding: 10px 14px;
+}
+.info{
+    display: flex;
+    flex-direction: column;
+    margin-left: 20px;
+}
+.schedule-block{
+    padding: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border: 2px solid gray;
+    border-radius: 8px;
+}
+.box{
+    padding: 20px 0 20px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px dashed gray;
+    border-radius: 8px;
 }
