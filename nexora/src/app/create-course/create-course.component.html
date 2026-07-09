@@ -9,21 +9,21 @@
         </div>
             <div class="block">
                 <label class="block-lable"> Title : </label>
-                <mat-form-field appearance="outline" class="full-width">
+                <input type="text" placeholder="New Course">
+                <!-- <mat-form-field appearance="outline" class="text full-width">
                     <input matInput placeholder="New Cource">
-                </mat-form-field>
+                </mat-form-field> -->
             </div>
 
             <div class="bolck">
                 <label class="block-lable"> Discription: </label>
                 <div class="discription-box">
                     <div class="discription-tool">
-                        <button mat-icon-button type="button" matTooltip="Undo">
-                            <mat-icon>undo</mat-icon>
-                        </button>
-                        <button mat-icon-button type="button" matTooltip="Redo">
-                            <mat-icon>redo</mat-icon>
-                        </button>
+                        
+                            <mat-icon class="icon">undo</mat-icon>
+                        
+                            <mat-icon class="icon">redo</mat-icon>
+                    
             
                         <span class="divider"></span>
             
@@ -34,48 +34,43 @@
             
                         <span class="divider"></span>
             
-                        <button mat-icon-button type="button" matTooltip="Bullet list">
-                            <mat-icon>format_list_bulleted</mat-icon>
-                        </button>
-                        <button mat-icon-button type="button" matTooltip="Bold">
-                            <mat-icon>format_bold</mat-icon>
-                        </button>
-                        <button mat-icob-button type="button" matTooltip="italic">
-                            <mat-icon>format_italic</mat-icon>
-                        </button>
-                        <button mat-icon-button type="button" matTooltip="Underline">
-                            <mat-icon>format_underlined</mat-icon>
-                        </button>   
-                        <button mat-icon-button type="button" matTooltip="Code">
-                            <mat-icon>code</mat-icon>
-                        </button>
-                        <button mat-icon-button type="button" matTooltip="Link">
-                            <mat-icon>link</mat-icon>
-                        </button>
-                        <button mat-icon-button type="button" matTooltip="Insert image">
-                            <mat-icon>image</mat-icon>
-                        </button>
-                        <button mat-icon-button type="button" matTooltip="Code block">
-                            <mat-icon>data_object</mat-icon>
-                        </button>
-                        <button mat-icon-button type="button" matTooltip="Quote">
-                            <mat-icon>format_quote</mat-icon>
-                        </button>
-                        <button mat-icon-button type="button" matTooltip="More">
-                            <mat-icon>remove</mat-icon>
-                        </button>
+                        
+                            <mat-icon class="icon">format_list_bulleted</mat-icon>
+                      
+                            <mat-icon class="icon">format_bold</mat-icon>
+                   
+    
+                            <mat-icon class="icon">format_italic</mat-icon>
+                        
+                
+                            <mat-icon class="icon">format_underlined</mat-icon>
+                    
+                            <mat-icon class="icon">code</mat-icon>
+                   
+                            <mat-icon class="icon">link</mat-icon>
+                        
+                        
+                            <mat-icon class="icon">image</mat-icon>
+                        
+                    
+                            <mat-icon class="icon">data_object</mat-icon>
+                      
+                            <mat-icon class="icon">format_quote</mat-icon>
+                    
+                            <mat-icon class="icon">remove</mat-icon>
+                    
                     </div>
-                    <hr>
+                    
                     <textarea class="text-area"></textarea>
                 </div>
             </div>
             <div class="block">
                 <div class="block-lable"> Options </div>
                 <div class="option-block">
-                    <div class="option-btn">
-                        <button matButton="outlined">Genral</button>
-                        <button matButton="outlined">Content Drip</button>
-                        <button matButton="outlined">Endrol</button>
+                    <div class="option-btn-box">
+                        <button class="option-btn" matButton="outlined">Genral</button>
+                        <button class="option-btn" matButton="outlined">Content Drip</button>
+                        <button class="option-btn" matButton="outlined">Endrol</button>
                     </div>
                     <br>
 
@@ -100,7 +95,7 @@
                 </div>
             </div>
             <div>
-                <button type="button" class="btn btn-light"> Next</button>
+                <button type="button" class="btn btn-light next"> Next</button>
             </div>
         </div>
 
@@ -140,24 +135,24 @@
             <div class="block">
                 <label class="block-lable"> Featured Image </label>
                 <div class="box">
-                    <div>
+                    <div class="box-upload">
                         <mat-icon>image</mat-icon>
                         <div>
-                            <button matButton="filled">Basic</button>
+                            <button matButton="filled" class="option-btn">Upload Thumnail</button>
                         </div>
-                        <p>jpg png gif and web format</p>
+                        <p>jpg, png, gif and web format up to ***MB</p>
                     </div>
                 </div>
             </div>
             <div class="block">
                 <label class="block-lable"> Video Intro </label>
                 <div class="box">
-                    <div>
+                    <div class="box-upload">
                         <mat-icon>camera</mat-icon>
                         <div>
-                            <button matButton="filled">Basic</button>
+                            <button matButton="filled" class="option-btn">Upload Video</button>
                         </div>
-                        <p>jpg png gif and web format</p>
+                        <p>MP4,MOv,WEBM are accepted</p>
                     </div>
                 </div>
             </div>
