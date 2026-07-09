@@ -20,9 +20,15 @@
                 <div class="discription-box">
                     <div class="discription-tool">
                         
+                        <button type="button" class="btn btn-light" mat-icon-button (click)="execCmd('undo')">
+ 
                             <mat-icon class="icon">undo</mat-icon>
+                        </button>                        
                         
+                        <button type="button" class="btn btn-light" mat-icon-button  (click)="execCmd('redo')">
+
                             <mat-icon class="icon">redo</mat-icon>
+                        </button>    
                     
             
                         <span class="divider"></span>
@@ -34,34 +40,48 @@
             
                         <span class="divider"></span>
             
-                        
+                        <button type="button" class="btn btn-light" mat-icon-button>
+
                             <mat-icon class="icon">format_list_bulleted</mat-icon>
-                      
+                        </button>
+
+                        <button type="button" class="btn btn-light" mat-icon-button  (mousedown)="$event.preventDefault()"     (click)="execCmd('bold')">
+
                             <mat-icon class="icon">format_bold</mat-icon>
-                   
-    
-                            <mat-icon class="icon">format_italic</mat-icon>
+                        </button>
+                            
+                        <button type="button" class="btn btn-light" mat-icon-button (mousedown)="$event.preventDefault()" [class.editor__toolbar-btn--active]="activeFormats.italic" (click)="execCmd('italic')">
+                           <mat-icon class="icon">format_italic</mat-icon>
+                        </button>
                         
-                
+                        <button type="button" class="btn btn-light" mat-icon-button>
                             <mat-icon class="icon">format_underlined</mat-icon>
-                    
+                        </button>
+                        <button type="button" class="btn btn-light" mat-icon-button>
                             <mat-icon class="icon">code</mat-icon>
-                   
+                        </button>
+                        <button type="button" class="btn btn-light" mat-icon-button>
                             <mat-icon class="icon">link</mat-icon>
+                        </button>
                         
-                        
+                        <button type="button" class="btn btn-light" mat-icon-button>
+
                             <mat-icon class="icon">image</mat-icon>
+                        </button>
                         
-                    
+                        <button type="button" class="btn btn-light" mat-icon-button>
                             <mat-icon class="icon">data_object</mat-icon>
-                      
+                        </button>
+                        <button type="button" class="btn btn-light" mat-icon-button>
                             <mat-icon class="icon">format_quote</mat-icon>
-                    
+                        </button>
+                        <button type="button" class="btn btn-light" mat-icon-button>
                             <mat-icon class="icon">remove</mat-icon>
+                        </button>
                     
                     </div>
                     
-                    <textarea class="text-area"></textarea>
+                    <textarea  contenteditable="true" class="text-area"></textarea>
                 </div>
             </div>
             <div class="block">
