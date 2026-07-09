@@ -1,0 +1,115 @@
+
+<div class="create-course-page">
+
+    <div class="heading">
+        <span class="root-text">Course</span>
+        <span class="root-text"> > </span>
+        <span class="next-text">Create course</span>
+    </div>
+
+
+    <div class="create-course-body">
+
+        <div class="left">
+            <div class="block">
+                <label class="block-lable"> Title : </label>
+                <mat-form-field appearance="outline" class="full-width">
+                    <input matInput placeholder="New Cource">
+                </mat-form-field>
+            </div>
+
+            <div class="bolck">
+                <label class="block-lable"> Discription: </label>
+                <div class="discription-box">
+                    <div class="discription-tool">
+                        <button mat-icon-button type="button" matTooltip="Undo">
+                            <mat-icon>undo</mat-icon>
+                        </button>
+                        <button mat-icon-button type="button" matTooltip="Redo">
+                            <mat-icon>redo</mat-icon>
+                        </button>
+            
+                        <span class="divider"></span>
+            
+                        <button mat-button type="button" class="select">
+                        Normal text
+                            <mat-icon>expand_more</mat-icon>
+                        </button>
+            
+                        <span class="divider"></span>
+            
+                        <button mat-icon-button type="button" matTooltip="Bullet list">
+                            <mat-icon>format_list_bulleted</mat-icon>
+                        </button>
+                        <button mat-icon-button type="button" matTooltip="Bold">
+                            <mat-icon>format_bold</mat-icon>
+                        </button>
+                        <button mat-icob-button type="button" matTooltip="italic">
+                            <mat-icon>format_italic</mat-icon>
+                        </button>
+                        <button mat-icon-button type="button" matTooltip="Underline">
+                            <mat-icon>format_underlined</mat-icon>
+                        </button>   
+                        <button mat-icon-button type="button" matTooltip="Code">
+                            <mat-icon>code</mat-icon>
+                        </button>
+                        <button mat-icon-button type="button" matTooltip="Link">
+                            <mat-icon>link</mat-icon>
+                        </button>
+                        <button mat-icon-button type="button" matTooltip="Insert image">
+                            <mat-icon>image</mat-icon>
+                        </button>
+                        <button mat-icon-button type="button" matTooltip="Code block">
+                            <mat-icon>data_object</mat-icon>
+                        </button>
+                        <button mat-icon-button type="button" matTooltip="Quote">
+                            <mat-icon>format_quote</mat-icon>
+                        </button>
+                        <button mat-icon-button type="button" matTooltip="More">
+                            <mat-icon>remove</mat-icon>
+                        </button>
+                    </div>
+                    <hr>
+                    <textarea class="text-area"></textarea>
+                </div>
+            </div>
+            <div class="block">
+                <div class="block-lable"> Options </div>
+                <div class="option-block">
+                    <div class="option-btn">
+                        <button matButton="outlined">Genral</button>
+                        <button matButton="outlined">Content Drip</button>
+                        <button matButton="outlined">Endrol</button>
+                    </div>
+                    <br>
+
+                    <label > Difficulty level</label>
+                    <div class="option">
+                        <select name="" id="">
+                            <option value="" selected>All levels</option>
+                            <option value="">Easy</option>
+                            <option value="">Mediun</option>
+                            <option value="">Hard</option>
+                            
+                        </select>
+                    </div>
+                    <div class="toggle">
+                        <span>Public Course</span>
+                        <mat-slide-toggle name="isPublicCourse" color="primary"></mat-slide-toggle>
+                    </div>
+                     <div class="toggle">
+                        <span>Q & A</span>
+                        <mat-slide-toggle name="isPublicCourse" color="primary"></mat-slide-toggle>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="right">
+
+
+
+        </div>
+    </div>
+</div>
+
