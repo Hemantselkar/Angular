@@ -6,11 +6,23 @@ import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import {MatCardModule} from '@angular/material/card';
 import {MatRadioModule} from '@angular/material/radio';
 import { CommonModule } from '@angular/common';
+import { Router } from '@angular/router';
+import { HeaderComponent } from "../header/header.component";
+import { SideNavComponent } from "../side-nav/side-nav.component";
 
 @Component({
   selector: 'app-create-course',
   standalone: true,
-  imports: [CommonModule, MatIconModule, MatFormFieldModule, MatInputModule, MatSlideToggleModule,MatCardModule,MatRadioModule],
+  imports: [
+    CommonModule,
+    MatIconModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatSlideToggleModule,
+    MatCardModule,
+    MatRadioModule,
+
+  ],
   templateUrl: './create-course.component.html',
   styleUrls: ['./create-course.component.scss']
 })
@@ -24,6 +36,10 @@ export class CreateCourseComponent {
     italic: false,
     underline: false,
     strikeThrough: false
+  }
+
+  constructor(private router:Router){
+
   }
 
   execCmd(command: string, value?: string): void {
@@ -76,6 +92,12 @@ export class CreateCourseComponent {
     }
     this.video = null;
     this.video = null;
+  }
+
+
+
+  next(){
+    this.router.navigate(['add-curriculuam'])
   }
 
 }

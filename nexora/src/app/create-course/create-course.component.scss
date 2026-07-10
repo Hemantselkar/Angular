@@ -38,6 +38,9 @@ $border-bg: gray;
     padding-right: 15px;
     border-right: 2px dashed black;
 }
+.block[_ngcontent-ng-c1568546133] {
+    margin-top: 15px;
+}
 .block{
     input{
         height: 45px;
@@ -55,13 +58,8 @@ $border-bg: gray;
     display: flex;
     font-size: 20px;
     font-weight: 500;
-    margin-bottom: 10px;
+    margin-bottom: 5px;
 }
-.full-width{
-    
-    width: 100%;
-}
-
 
 .discription-box{
     background: $color-bg;
@@ -100,8 +98,6 @@ $border-bg: gray;
     background-color: $color-bg;
     min-width: auto;
     padding: 0 8px;
-
-  
 }
 .text-area{
     width: 100%;

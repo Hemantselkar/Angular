@@ -1,10 +1,28 @@
 import { Routes } from '@angular/router';
 import { CreateCourseComponent } from './create-course/create-course.component';
+import { AddCurriculuamComponent } from './add-curriculuam/add-curriculuam.component';
+import { HeaderComponent } from './header/header.component';
+import { AddSectionComponent } from './add-section/add-section.component';
+import { SideNavComponent } from './side-nav/side-nav.component';
+import { LayoutComponent } from './layout/layout.component';
 
 export const routes: Routes = [
     {
-        path:'',redirectTo:"create",pathMatch:'full'
-    },{
+        path:'',redirectTo:"layout",pathMatch:'full'
+    },
+    {
+        path:'layout',component:LayoutComponent
+    },
+    {
         path:'create',component:CreateCourseComponent
+    },
+    {
+        path:'side-nav',component:SideNavComponent
+    },
+    {
+        path:'add-curriculuam',component:AddCurriculuamComponent
+    },
+    {
+        path:'add-section',component:AddSectionComponent
     }
 ];
