@@ -88,9 +88,9 @@
                 <div class="block-lable"> Options </div>
                 <div class="option-block">
                     <div class="option-btn-box">
-                        <button class="option-btn" matButton="outlined">Genral</button>
-                        <button class="option-btn" matButton="outlined">Content Drip</button>
-                        <button class="option-btn" matButton="outlined">Endrol</button>
+                        <button class="btn btn-light next option-btn">Genral</button>
+                        <button class="btn btn-light next option-btn" >Content Drip</button>
+                        <button class="btn btn-light next option-btn" >Endrol</button>
                     </div>
                     <br>
 
@@ -156,23 +156,46 @@
                 <label class="block-lable"> Featured Image </label>
                 <div class="box">
                     <div class="box-upload">
-                        <mat-icon>image</mat-icon>
-                        <div>
-                            <button matButton="filled" class="option-btn">Upload Thumnail</button>
+                        <div *ngIf="thumbnail" class="box-upload__preview-wrap">
+                            <img [src]="thumbnail" alt="Thumbnail preview" class="box-upload__img" />
+                            <button class="btn btn-light remove-btn" (click)="removeThumbnail()">
+                            <mat-icon>close</mat-icon>
+                            </button>
                         </div>
-                        <p>jpg, png, gif and web format up to ***MB</p>
+
+                        <div *ngIf="!thumbnail" class="box-upload__preview-wrap">
+
+                            <mat-icon>image</mat-icon>
+                            <div>
+                                <input type="file" style="display: none;" (change)='onFileSelect($event)'#fileInput  >
+                                <button  class="btn btn-light next option-btn" (click)="fileInput.click()">Upload Thumnail</button>
+                            </div>
+                            <p>jpg, png, gif and web format up to ***MB</p>
+                        </div>
                     </div>
+
+                    
                 </div>
             </div>
             <div class="block">
                 <label class="block-lable"> Video Intro </label>
                 <div class="box">
                     <div class="box-upload">
-                        <mat-icon>camera</mat-icon>
-                        <div>
-                            <button matButton="filled" class="option-btn">Upload Video</button>
+                         <div *ngIf="video" class="box-upload__preview-wrap">
+                            <video [src]="video" controls class="box-upload__video"></video>
+                            <button class="btn btn-light remove-btn" (click)="removeVideo()">
+                            <mat-icon>close</mat-icon>
+                            </button>
                         </div>
-                        <p>MP4,MOv,WEBM are accepted</p>
+
+                        <div *ngIf="!video" class="box-upload__preview-wrap">
+                            <mat-icon>videocam</mat-icon>
+                            <div>
+                            <input type="file" accept="video/*" style="display: none;" (change)="onVideoSelect($event)" #videoInput>
+                            <button class="btn btn-light next option-btn" (click)="videoInput.click()">Upload video</button> 
+                            </div>
+                            <p>MP4, MOV, WEBM accepted up to 500MB</p>
+                        </div>
                     </div>
                 </div>
             </div>
