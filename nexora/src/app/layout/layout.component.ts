@@ -12,5 +12,9 @@ import { RouterOutlet } from '@angular/router';
 })
 
 export class LayoutComponent {
+  isExpand:boolean=false;
+    toggleSidebar(): void {
+    this.isExpand = !this.isExpand;
+  }
 
 }

@@ -6,7 +6,7 @@ import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import {MatCardModule} from '@angular/material/card';
 import {MatRadioModule} from '@angular/material/radio';
 import { CommonModule } from '@angular/common';
-import { Router } from '@angular/router';
+import { Router, RouterOutlet } from '@angular/router';
 import { HeaderComponent } from "../header/header.component";
 import { SideNavComponent } from "../side-nav/side-nav.component";
 
@@ -21,8 +21,8 @@ import { SideNavComponent } from "../side-nav/side-nav.component";
     MatSlideToggleModule,
     MatCardModule,
     MatRadioModule,
-
-  ],
+    RouterOutlet
+],
   templateUrl: './create-course.component.html',
   styleUrls: ['./create-course.component.scss']
 })
@@ -30,7 +30,7 @@ export class CreateCourseComponent {
   @ViewChild('editorArea') editorArea!: ElementRef<HTMLTextAreaElement>;
   thumbnail :string|null=null;
   video:string | null = null;
-
+isClick:boolean=false;
   activeFormats = {
     bold: false,
     italic: false,
@@ -97,7 +97,8 @@ export class CreateCourseComponent {
 
 
   next(){
-    this.router.navigate(['add-curriculuam'])
+    this.isClick=true;
+    this.router.navigate(['layout/create/add-curriculuam/'])
   }
 
 }

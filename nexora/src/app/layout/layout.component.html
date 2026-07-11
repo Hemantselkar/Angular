@@ -1,6 +1,6 @@
-<div class="layout">
+<div class="layout" [class.side-expand]="isExpand">
 
-    <app-side-nav></app-side-nav>
+    <app-side-nav (hoverChange)="isExpand = $event"></app-side-nav>
 
     <app-header></app-header>
 

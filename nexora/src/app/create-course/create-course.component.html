@@ -1,6 +1,9 @@
 
-<!-- <app-header></app-header>
-<app-side-nav></app-side-nav> -->
+@if (isClick) {
+
+    <router-outlet></router-outlet>
+}
+@else {
 <div class="create-course-page">
     <div class="create-course-body">
         <div class="left">
@@ -230,4 +233,5 @@
         </div>      
     </div>
 </div>
+}
 

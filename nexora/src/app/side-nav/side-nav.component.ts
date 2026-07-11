@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 import { MatIcon } from "@angular/material/icon";
+import { RouterLink } from "@angular/router";
 
 interface Sublist{
   label:string,
@@ -18,13 +19,14 @@ interface Navlist{
 @Component({
   selector: 'app-side-nav',
   standalone: true,
-  imports: [MatIcon],
+  imports: [MatIcon, RouterLink],
   templateUrl: './side-nav.component.html',
   styleUrl: './side-nav.component.scss'
 })
 export class SideNavComponent {
 
-
+  @Output() hoverChange = new EventEmitter<boolean>();
+  expanded = false;
 
   navlist:Navlist[]=[
 
@@ -35,7 +37,7 @@ export class SideNavComponent {
     icon: 'school',
     expanded: true, 
     children: [
-      { label: 'Courses', route: '/lms/create' },
+      { label: 'Courses', route: 'create' },
       { label: 'Content bank', route: '' },
       { label: 'Categories', route: '' },
       { label: 'Tags', route: '' },
@@ -53,6 +55,16 @@ export class SideNavComponent {
   ]
 
 
+    onMouseEnter(): void {
+    this.expanded = true;
+    this.hoverChange.emit(true);
+  }
+
+  onMouseLeave(): void {
+    this.expanded = false;
+    this.hoverChange.emit(false);
+  }
+  
   toogle(link:Navlist){
     if(link.children){
       link.expanded=!link.expanded

@@ -1,3 +1,6 @@
+<aside class="sidenav-wrapper" [class.expanded]="expanded" [class.collapsed]="!expanded" (mouseenter)="onMouseEnter()"
+  (mouseleave)="onMouseLeave()">
+
 <div class="sidebar">
 
     <div class="sidebar-logo">
@@ -26,18 +29,14 @@
 
                     @if (link.expanded) {
                         <div class="sidebar_submenu">
-
                             @for (sublink of link.children; track $index) {
-                                <a class="sidebar_sublink" class="sidebar__sublink" > <span>{{sublink.label}}</span></a>
+                                <a class="sidebar_sublink" [routerLink]="sublink.route"> <span>{{sublink.label}}</span></a>
                             }
                         </div>
                     }
-
                 </div>
-
             }
         }
-
     </div>
-
 </div>
+</aside>

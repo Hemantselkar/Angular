@@ -11,18 +11,21 @@ export const routes: Routes = [
         path:'',redirectTo:"layout",pathMatch:'full'
     },
     {
-        path:'layout',component:LayoutComponent
+        path:'layout',component:LayoutComponent,children:[
+            {
+                path:'create',component:CreateCourseComponent,children:[
+                    {
+                        path:'side-nav',component:SideNavComponent
+                    },
+                    {
+                        path:'add-curriculuam',component:AddCurriculuamComponent
+                    },
+                    {
+                        path:'add-section',component:AddSectionComponent
+                    }
+                ]
+            },
+        ]
     },
-    {
-        path:'create',component:CreateCourseComponent
-    },
-    {
-        path:'side-nav',component:SideNavComponent
-    },
-    {
-        path:'add-curriculuam',component:AddCurriculuamComponent
-    },
-    {
-        path:'add-section',component:AddSectionComponent
-    }
+   
 ];
