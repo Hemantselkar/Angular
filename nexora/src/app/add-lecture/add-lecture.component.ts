@@ -1,53 +1,39 @@
+import { CommonModule } from '@angular/common';
 import { Component, ElementRef, ViewChild } from '@angular/core';
 import { MatIconModule } from '@angular/material/icon';
-import { MatFormFieldModule } from '@angular/material/form-field';
-import { MatInputModule } from '@angular/material/input';
-import { MatSlideToggleModule } from '@angular/material/slide-toggle';
-import {MatCardModule} from '@angular/material/card';
-import {MatRadioModule} from '@angular/material/radio';
-import { CommonModule } from '@angular/common';
-import { Router, RouterOutlet } from '@angular/router';
-import { HeaderComponent } from "../header/header.component";
-import { SideNavComponent } from "../side-nav/side-nav.component";
+import { MatRadioModule } from '@angular/material/radio';
+
+import { Router } from '@angular/router';
+
 
 @Component({
-  selector: 'app-create-course',
+  selector: 'app-add-lecture',
   standalone: true,
-  imports: [
-    CommonModule,
-    MatIconModule,
-    MatFormFieldModule,
-    MatInputModule,
-    MatSlideToggleModule,
-    MatCardModule,
-    MatRadioModule,
-    RouterOutlet
-],
-  templateUrl: './create-course.component.html',
-  styleUrls: ['./create-course.component.scss']
+  imports: [CommonModule, MatIconModule,MatRadioModule],
+  templateUrl: './add-lecture.component.html',
+  styleUrl: './add-lecture.component.scss'
 })
-export class CreateCourseComponent {
+export class AddLectureComponent {
   @ViewChild('editorArea') editorArea!: ElementRef<HTMLTextAreaElement>;
   thumbnail :string|null=null;
   video:string | null = null;
   isClick:boolean=false;
+  isModule:boolean=false;
   activeFormats = {
     bold: false,
     italic: false,
     underline: false,
     strikeThrough: false
   }
-
-  constructor(private router:Router){
-
-  }
-
+    
+  constructor(private router:Router){}
+  
   execCmd(command: string, value?: string): void {
     document.execCommand(command, false, value);
-    
   }
 
-  onFileSelect(event: Event): void {
+
+   onFileSelect(event: Event): void {
     const input = event.target as HTMLInputElement | null;
     if (!input?.files?.length) {
       return;
@@ -93,13 +79,6 @@ export class CreateCourseComponent {
     }
     this.video = null;
     this.video = null;
-  }
-
-
-
-  next(){
-    this.isClick=true;
-    this.router.navigate(['layout/create/add-curriculuam/'])
   }
 
 }

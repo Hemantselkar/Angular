@@ -177,7 +177,6 @@ $border-bg: gray;
 }
 .schedule-block{
     background: $color-bg;
-
     padding: 8px;
     display: flex;
     align-items: center;
@@ -193,8 +192,7 @@ $border-bg: gray;
     align-items: center;
     justify-content: center;
     border: 2px dashed $border-bg;
-    border-radius: 8px;
-    
+    border-radius: 8px;  
 }
 
 .box-upload{
@@ -220,3 +218,21 @@ $border-bg: gray;
         width: 100%;
     }  
 }
+
+   ::ng-deep .mat-mdc-slide-toggle .mat-internal-form-field .mdc-switch__track{ 
+    height: 20px;
+   }
+   ::ng-deep .mat-mdc-slide-toggle .mat-internal-form-field .mdc-switch__handle{ 
+    height: 5px;
+   }
+    ::ng-deep.mat-mdc-slide-toggle .mdc-switch__icons {
+        padding: 8px;       
+        width: 10px;
+        height: 10px;
+    }
+
+    ::ng-deep.mat-mdc-slide-toggle  .mdc-switch__handle{
+        width: 18px !important;
+        height: 15px !important;
+        
+    }

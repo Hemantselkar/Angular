@@ -1,10 +1,5 @@
 $color-bg: #ffff;
 $border-bg: gray;
-.container{
-    
-    padding-top: 50px;
-    width: 60%;
-}
 .block{ 
     input{
         height: 45px;
@@ -60,7 +55,7 @@ $border-bg: gray;
 
 .text-area{
     width: 100%;
-    min-height: 140px;
+    min-height: 100px;
     border: none;
     outline: none;
     resize: vertical;
@@ -70,26 +65,76 @@ $border-bg: gray;
     color: #1a1a1f;
 }
 
-.module-box{
-    border: 2px solid $border-bg;
-    border-radius: 8px;
-    margin-top: 10rem;
-    margin-left: 20rem;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    width: 50%;
-    background: $color-bg;
-}
-
-.module {
-    padding: 15px;
-    font-size: 20px;
+.upload-block{
+    margin-top: 10px;
+    background-color: $color-bg;
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    border-bottom: 1px solid $border-bg;
+    justify-content: space-evenly;
+    border: 2px solid $border-bg;
+    border-radius: 8px;
+    gap: 15px;
+}
 
+.box{
+    background: $color-bg;
+    margin: 0;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px dashed $border-bg;
+    border-radius: 8px;  
+}
+
+.upload{
+    padding: 15px;
+}
+.box-upload{
+    padding-top: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+
+    &__preview-wrap{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    &__img{
+        height: 100%;
+        width: 100%;
+    }
+    &__video{
+        height: 50%;
+        width: 100%;
+    }  
+}
+
+.time{
+    display: flex;
+    gap: 25px;
+    form input{
+        margin-left: 10px;
+        width: 100px;
+        padding-left:25px ;
+        border: 2px solid $border-bg;
+        border-radius: 8px;
+    }
+}
+.radio {
+    margin-top: 15px;
     
 }
 
+.radio mat-radio-button{
+    background-color: $color-bg;
+    margin-left: 15px;
+    gap: 15px;
+    padding: 13px;
+    border: 2px solid $border-bg;
+    border-radius: 8px;
+}

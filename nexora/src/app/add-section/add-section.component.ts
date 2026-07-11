@@ -10,12 +10,9 @@ import { Router } from '@angular/router';
   styleUrl: './add-section.component.scss'
 })
 export class AddSectionComponent {
-
-
    @ViewChild('editorArea') editorArea!: ElementRef<HTMLTextAreaElement>;
-    thumbnail :string|null=null;
-    video:string | null = null;
-  
+
+    isModule:boolean=false;
     activeFormats = {
       bold: false,
       italic: false,
@@ -29,5 +26,12 @@ export class AddSectionComponent {
   
     execCmd(command: string, value?: string): void {
       document.execCommand(command, false, value);
+    }
+
+    module(){
+      this.isModule=true
+    }
+    addLecture(){
+      this.router.navigate(['layout/create/add-lecture'])
     }
 }
