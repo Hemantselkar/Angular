@@ -26,20 +26,19 @@
 
         <span class="divider"></span>
 
-        <button type="button" class="btn btn-light" mat-icon-button>
+        <button type="button" class="btn btn-light" mat-icon-button (click)="execCmd('insertUnorderedList')">
           <mat-icon class="icon">format_list_bulleted</mat-icon>
         </button>
 
-        <button type="button" class="btn btn-light" mat-icon-button (mousedown)="$event.preventDefault()" (click)="execCmd('bold')">
+        <button type="button" class="btn btn-light" mat-icon-button (click)="text('bold')">
           <mat-icon class="icon">format_bold</mat-icon>
         </button>
 
-        <button type="button" class="btn btn-light" mat-icon-button (mousedown)="$event.preventDefault()"
-          [class.editor__toolbar-btn--active]="activeFormats.italic" (click)="execCmd('italic')">
+        <button type="button" class="btn btn-light" mat-icon-button (click)="text('italic')">
           <mat-icon class="icon">format_italic</mat-icon>
         </button>
 
-        <button type="button" class="btn btn-light" mat-icon-button>
+        <button type="button" class="btn btn-light" mat-icon-button (click)="text('underline')">
           <mat-icon class="icon">format_underlined</mat-icon>
         </button>
         <button type="button" class="btn btn-light" mat-icon-button>
@@ -56,15 +55,16 @@
         <button type="button" class="btn btn-light" mat-icon-button>
           <mat-icon class="icon">data_object</mat-icon>
         </button>
-        <button type="button" class="btn btn-light" mat-icon-button>
+        <!-- <button type="button" class="btn btn-light" mat-icon-button>
           <mat-icon class="icon">format_quote</mat-icon>
-        </button>
+        </button> -->
         <button type="button" class="btn btn-light" mat-icon-button>
           <mat-icon class="icon">remove</mat-icon>
         </button>
       </div>
 
-      <textarea contenteditable="true" class="text-area"></textarea>
+      <div #editorArea contenteditable="true" class="text-area"></div>
+
     </div>
   </div>
   <div style="display: flex; justify-content: center; margin-top: 25px;">
@@ -101,6 +101,5 @@
     </div>
 
   </div>
-
 </div>
 }

@@ -30,8 +30,8 @@ export class SideNavComponent {
 
   navlist:Navlist[]=[
 
-  { label: 'Dashboard', icon: 'grid_view', route: '/dashboard' },
-  { label: 'Users', icon: 'group', route: '/users' },
+  { label: 'Dashboard', icon: 'grid_view', route: '' },
+  { label: 'Users', icon: 'group', route: '' },
   {
     label: 'LMS',
     icon: 'school',
@@ -48,10 +48,10 @@ export class SideNavComponent {
       { label: 'Enrollment', route: '' }
       ]
     } ,
-    { label: 'Bulk Upload', icon: 'upload_file', route: '/users' },
-    { label: 'Orders', icon: 'receipt_long', route: '/users' },
-    { label: 'Scription', icon: 'credit_card', route: '/users' },
-    { label: 'Payment', icon: 'account_balance_wallet', route: '/users' },
+    { label: 'Bulk Upload', icon: 'upload_file', route: '' },
+    { label: 'Orders', icon: 'receipt_long', route: '' },
+    { label: 'Scription', icon: 'credit_card', route: '' },
+    { label: 'Payment', icon: 'account_balance_wallet', route: '' },
   ]
 
 

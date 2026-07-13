@@ -27,7 +27,7 @@ import { SideNavComponent } from "../side-nav/side-nav.component";
   styleUrls: ['./create-course.component.scss']
 })
 export class CreateCourseComponent {
-  @ViewChild('editorArea') editorArea!: ElementRef<HTMLTextAreaElement>;
+  @ViewChild('editorArea') editorArea!: ElementRef<HTMLDivElement>;
   thumbnail :string|null=null;
   video:string | null = null;
   isClick:boolean=false;
@@ -42,9 +42,24 @@ export class CreateCourseComponent {
 
   }
 
+  text(type:string){
+    const tool=this.editorArea.nativeElement;
+    tool.focus();
+    switch(type){
+      case 'bold':
+        tool.style.fontWeight= tool.style.fontWeight=== 'bold' ? 'normal' :'bold';
+        break;
+      case 'italic':
+        tool.style.fontStyle= tool.style.fontStyle=== 'italic'? 'Inter' :'italic';
+        break;
+      case 'underline':
+        tool.style.textDecorationLine= tool.style.textDecorationLine==='underline'? 'none':'underline'
+        break;
+    }
+  }
   execCmd(command: string, value?: string): void {
+    this.editorArea.nativeElement.focus();
     document.execCommand(command, false, value);
-    
   }
 
   onFileSelect(event: Event): void {

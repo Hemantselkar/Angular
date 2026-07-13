@@ -23,10 +23,27 @@ export class AddSectionComponent {
     constructor(private router:Router){
   
     }
+
+    text(type:string){
+      const tool=this.editorArea.nativeElement;
+      tool.focus();
+      switch(type){
+        case 'bold':
+          tool.style.fontWeight= tool.style.fontWeight=== 'bold' ? 'normal' :'bold';
+          break;
+        case 'italic':
+          tool.style.fontStyle= tool.style.fontStyle=== 'italic'? 'Inter' :'italic';
+          break;
+        case 'underline':
+          tool.style.textDecorationLine= tool.style.textDecorationLine==='underline'? 'none':'underline'
+          break;
+      }
+    }
   
     execCmd(command: string, value?: string): void {
-      document.execCommand(command, false, value);
-    }
+    this.editorArea.nativeElement.focus();
+    document.execCommand(command, false, value);
+  }
 
     module(){
       this.isModule=true

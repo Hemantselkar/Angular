@@ -42,47 +42,50 @@
             
                         <span class="divider"></span>
             
-                        <button type="button" class="btn btn-light" mat-icon-button>
+                        <button type="button" class="btn btn-light" mat-icon-button (click)="execCmd('insertUnorderedList')">
 
                             <mat-icon class="icon">format_list_bulleted</mat-icon>
                         </button>
 
-                        <button type="button" class="btn btn-light" mat-icon-button  (click)="execCmd('bold')">
+                        <button type="button" class="btn btn-light" mat-icon-button (click)="text('bold')">
                             <mat-icon class="icon">format_bold</mat-icon>
                         </button>
                             
-                        <button type="button" class="btn btn-light" mat-icon-button (mousedown)="$event.preventDefault()" [class.editor__toolbar-btn--active]="activeFormats.italic" (click)="execCmd('italic')">
+                        <button type="button" class="btn btn-light" mat-icon-button (click)="text('italic')">
                            <mat-icon class="icon">format_italic</mat-icon>
                         </button>
                         
-                        <button type="button" class="btn btn-light" mat-icon-button>
+                        <button type="button" class="btn btn-light" mat-icon-button (click)="text('underline')">
                             <mat-icon class="icon">format_underlined</mat-icon>
                         </button>
-                        <button type="button" class="btn btn-light" mat-icon-button>
-                            <mat-icon class="icon">code</mat-icon>
-                        </button>
-                        <button type="button" class="btn btn-light" mat-icon-button>
-                            <mat-icon class="icon">link</mat-icon>
-                        </button>
-                        
-                        <button type="button" class="btn btn-light" mat-icon-button>
 
-                            <mat-icon class="icon">image</mat-icon>
-                        </button>
-                        
-                        <button type="button" class="btn btn-light" mat-icon-button>
-                            <mat-icon class="icon">data_object</mat-icon>
-                        </button>
-                        <button type="button" class="btn btn-light" mat-icon-button>
+                        <button type="button" class="btn btn-light" mat-icon-button (click)="execCmd('formatBlock', 'blockquote')">
                             <mat-icon class="icon">format_quote</mat-icon>
                         </button>
-                        <button type="button" class="btn btn-light" mat-icon-button>
+                        <button type="button" class="btn btn-light" mat-icon-button (click)="text('code')">
+                            <mat-icon class="icon">code</mat-icon>
+                        </button>
+                        <button type="button" class="btn btn-light" mat-icon-button (click)="text('url')">
+                            <mat-icon class="icon">link</mat-icon>
+                        </button>
+
+                        <button type="button" class="btn btn-light" mat-icon-button (click)="text('image')">
+                            <input type="file" style="display: none;" (change)='onFileSelect($event)'#fileInput >
+                            <mat-icon class="icon" (click)="fileInput.click()">image</mat-icon>
+                        </button>
+                        
+                        <button type="button" class="btn btn-light" mat-icon-button >
+                            <mat-icon class="icon">data_object</mat-icon>
+                        </button>
+                      
+                        <button type="button" class="btn btn-light" mat-icon-button (click)="text('remove')">
                             <mat-icon class="icon">remove</mat-icon>
                         </button>
                     
                     </div>
                     
-                    <textarea  contenteditable="true" class="text-area"></textarea>
+                    <!-- <textarea #editorArea contenteditable="true" class="text-area"></textarea> -->
+                     <div #editorArea contenteditable="true" class="text-area"></div>
                 </div>
             </div>
             <div class="block">

@@ -11,7 +11,7 @@
         <button
           type="button"
           class="btn btn-light"
-          mat-icon-button(click)="execCmd('undo')"
+          mat-icon-button (click)="execCmd('undo')"
         >
           <mat-icon class="icon">undo</mat-icon>
         </button>
@@ -34,7 +34,7 @@
 
         <span class="divider"></span>
 
-        <button type="button" class="btn btn-light" mat-icon-button>
+        <button type="button" class="btn btn-light" mat-icon-button (click)="execCmd('insertUnorderedList')">
           <mat-icon class="icon">format_list_bulleted</mat-icon>
         </button>
 
@@ -42,8 +42,7 @@
           type="button"
           class="btn btn-light"
           mat-icon-button
-          (mousedown)="$event.preventDefault()"
-          (click)="execCmd('bold')"
+         (click)="text('bold')"
         >
           <mat-icon class="icon">format_bold</mat-icon>
         </button>
@@ -52,14 +51,12 @@
           type="button"
           class="btn btn-light"
           mat-icon-button
-          (mousedown)="$event.preventDefault()"
-          [class.editor__toolbar-btn--active]="activeFormats.italic"
-          (click)="execCmd('italic')"
+          (click)="text('italic')"
         >
           <mat-icon class="icon">format_italic</mat-icon>
         </button>
 
-        <button type="button" class="btn btn-light" mat-icon-button>
+        <button type="button" class="btn btn-light" mat-icon-button (click)="text('underline')">
           <mat-icon class="icon">format_underlined</mat-icon>
         </button>
         <button type="button" class="btn btn-light" mat-icon-button>
@@ -84,7 +81,9 @@
         </button>
       </div>
 
-      <textarea contenteditable="true" class="text-area"></textarea>
+      <!-- <textarea contenteditable="true" class="text-area"></textarea> -->
+        <div #editorArea contenteditable="true" class="text-area"></div>
+
     </div>
   </div>
 
