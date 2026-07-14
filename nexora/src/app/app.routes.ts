@@ -6,6 +6,7 @@ import { AddSectionComponent } from './add-section/add-section.component';
 import { SideNavComponent } from './side-nav/side-nav.component';
 import { LayoutComponent } from './layout/layout.component';
 import { AddLectureComponent } from './add-lecture/add-lecture.component';
+import { ImportNotesComponent } from './import-notes/import-notes.component';
 
 export const routes: Routes = [
     {
@@ -14,10 +15,9 @@ export const routes: Routes = [
     {
         path:'layout',component:LayoutComponent,children:[
             {
+                
                 path:'create',component:CreateCourseComponent,children:[
-                    {
-                        path:'side-nav',component:SideNavComponent
-                    },
+                    
                     {
                         path:'add-curriculuam',component:AddCurriculuamComponent
                     },
@@ -26,6 +26,9 @@ export const routes: Routes = [
                     },
                     {
                         path:'add-lecture',component:AddLectureComponent
+                    },
+                    {
+                        path:'import-notes',component:ImportNotesComponent
                     }
                 ]
             },

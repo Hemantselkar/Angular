@@ -138,3 +138,35 @@ $border-bg: gray;
     border: 2px solid $border-bg;
     border-radius: 8px;
 }
+.import-block{
+    margin: 15px;
+    width: 80%;
+    height: 200px;
+    background-color: $color-bg;
+    justify-content: center;
+    border: 2px dashed $border-bg;
+    border-radius: 8px;
+}
+.import{
+    display: flex;
+    margin-top: 4.5rem;
+    flex-direction: column;
+    cursor: pointer;
+    align-items: center;
+}
+.imports-1{
+    display: flex;
+    align-items: center;
+    padding: 25px;
+    gap: 10rem;
+}
+.select-import{
+    display: flex !important;
+    flex-direction: column !important;
+    &-block select{
+        width: 182px;
+        height: 35px;
+        border: 2px solid $border-bg;
+        border-radius: 8px;
+    }
+}

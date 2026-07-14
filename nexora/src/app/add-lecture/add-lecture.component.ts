@@ -1,15 +1,17 @@
 import { CommonModule } from '@angular/common';
 import { Component, ElementRef, ViewChild } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 import { MatIconModule } from '@angular/material/icon';
-import { MatRadioModule } from '@angular/material/radio';
-
+import { MatRadioModule, MatRadioChange } from '@angular/material/radio';
 import { Router } from '@angular/router';
+import { CourseService } from '../services/course.service';
+import { ChapterData, ChapterList, ClassData } from '../model/course.model';
 
 
 @Component({
   selector: 'app-add-lecture',
   standalone: true,
-  imports: [CommonModule, MatIconModule,MatRadioModule],
+  imports: [CommonModule,FormsModule, MatIconModule, MatRadioModule],
   templateUrl: './add-lecture.component.html',
   styleUrl: './add-lecture.component.scss'
 })
@@ -17,6 +19,11 @@ export class AddLectureComponent {
   @ViewChild('editorArea') editorArea!: ElementRef<HTMLDivElement>;
   thumbnail :string|null=null;
   video:string | null = null;
+  pdf: string|null=null;
+
+  isUpload:boolean=false;
+  isImport:boolean=false;
+
   isClick:boolean=false;
   isModule:boolean=false;
   activeFormats = {
@@ -25,8 +32,14 @@ export class AddLectureComponent {
     underline: false,
     strikeThrough: false
   }
+// allTopicsForSubject: any;
+
     
-  constructor(private router:Router){}
+  constructor(private router:Router, private courseService: CourseService){}
+
+  ngOnInit() {
+    this.allData = this.courseService.getAllClasses();
+  }
   
 
    text(type:string){
@@ -98,4 +111,50 @@ export class AddLectureComponent {
     this.video = null;
   }
 
+
+  onPfdSelect(pdfFile:Event){
+    
+    const input = pdfFile.target as HTMLInputElement | null;
+    if (!input?.files?.length) {
+      return;
+    }
+    let file= input.files[0];
+    
+    this.pdf =file.name;
+    console.log(this.pdf)
+  }
+  onRadioChange(events: MatRadioChange){
+    if (this.isUpload=true) {
+      this.isUpload = events.value === '2';
+    }
+    if (this.isImport=true) {
+      this.isImport=events.value=== '1';
+    }
+  }
+
+
+ allData: ClassData[] = [];
+  selectedClass: string = '';
+  selectedSubject: string = '';
+  selectedChapter: string = '';
+
+  availableSubjects: ChapterList[] = [];
+  availableChapters: ChapterData[] = [];
+
+  onClassChange() {
+    this.availableSubjects = this.courseService.getSubjectsByClass(this.selectedClass);
+    this.selectedSubject = '';
+    this.selectedChapter = '';
+    this.availableChapters = [];
+  }
+
+  onSubjectChange() {
+    this.availableChapters = this.courseService.getChaptersBySubject(this.availableSubjects, this.selectedSubject);
+    this.selectedChapter = '';
+  }
+
+  next() {
+    console.log("next clicked");
+    this.router.navigate(['layout/create/import-notes']);
+  }
 }
