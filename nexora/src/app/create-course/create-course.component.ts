@@ -7,8 +7,7 @@ import {MatCardModule} from '@angular/material/card';
 import {MatRadioModule} from '@angular/material/radio';
 import { CommonModule } from '@angular/common';
 import { Router, RouterOutlet } from '@angular/router';
-import { HeaderComponent } from "../header/header.component";
-import { SideNavComponent } from "../side-nav/side-nav.component";
+
 
 @Component({
   selector: 'app-create-course',
